@@ -3,10 +3,10 @@
 		margin: auto;
 }
 
-#trnOrderNumber {
+input#trnOrderNumber {
 	display: none;
 }
 
-#ordEmailAddress {
+input#ordEmailAddress {
 	display: none;
 }
