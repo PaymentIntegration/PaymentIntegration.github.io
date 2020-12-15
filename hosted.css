@@ -4,9 +4,9 @@
 }
 
 input#trnOrderNumber {
-	display: none;
+	pointer-events: none;
 }
 
 input#ordEmailAddress {
-	display: none;
+	pointer-events: none;
 }
