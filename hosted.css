@@ -5,10 +5,12 @@
 
 input#trnOrderNumber {
 	pointer-events: none;
+	background-color: whitesmoke !important;
 }
 
 input#ordEmailAddress {
 	pointer-events: none;
+	background-color: whitesmoke !important;
 }
 
 img#powered-by-img {
