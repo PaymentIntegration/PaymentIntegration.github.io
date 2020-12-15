@@ -10,3 +10,7 @@ input#trnOrderNumber {
 input#ordEmailAddress {
 	pointer-events: none;
 }
+
+img#powered-by-img {
+	display: none;
+}
