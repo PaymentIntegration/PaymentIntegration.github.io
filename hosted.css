@@ -1,7 +1,3 @@
-.outerDiv {
-		display: block;
-		margin: auto;
-}
 
 input#trnOrderNumber {
 	pointer-events: none;
