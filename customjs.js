@@ -1,18 +1,40 @@
-alert('TEsting js')
-function checkAlert() {
-  alert("kl")
-}
-
-$(document).ready(function(){
-  $('#trnExpYear').blur(function() {
-    var currentYear = (new Date).getFullYear();
-    var expYear = $("#trnExpYear").text());
-    if (expYear === currentYear) {
+function expDateCheck() {
+  var currentYear = (new Date).getFullYear();
+    var expYear = $("#trnExpYear").val();
+    if (expYear === currentYear.toString().substr(2)) {
        var currentMonth = (new Date).getMonth() + 1;
-       var expMonth = $("#trnExpMonth").text());
-       if (expMonth < currentMonth) {
-         $("#trnExpMonth").css('background-color', 'red')
+       var expMonth = $("#trnExpMonth").val();
+       if (expMonth < currentMonth.toString()) {
+         $("#trnExpMonth").css('border-color', 'red')
+         $("#trnExpYear").css('border-color', 'red')
+       } else {
+        $("#trnExpMonth").css('border-color', 'black')
+        $("#trnExpYear").css('border-color', 'black')
        }
     }
+}
+
+// function validatePhoneNumber(phoneNumber, country) {
+//  return phoneUtil.isValidNumberForRegion(phoneUtil.parse(phoneNumber, country), country);
+// }
+
+$(document).ready(function(){
+  $('#trnCardCvd').focus(function() {
+    expDateCheck();
   })
+  $('#trnExpMonth #trnExpYear').blur(function() {
+    expDateCheck();
+  });
+  $('#ordName').blur(function() {
+    
+  });
+  $('#ordCity').blur(function() {
+    
+  });
+  $('#ordPhoneNumber').blur(function() {
+    //validatePhoneNumber($('#ordPhoneNumber').val(), $('#ordCountry').val());
+  });
+  $('#ordPostalCode').blur(function() {
+    
+  });
 });
