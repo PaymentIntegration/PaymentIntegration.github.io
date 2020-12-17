@@ -47,7 +47,7 @@ function expDateCheck() {
   });
 
 function registerEventListeners() {
-const cardCvd = document.getElementById('trnCardCvd');
+const cardCvd = document.getElementById('frmPayment').trnCardCvd
 cardCvd.addEventListener('focus', function() {
     expDateCheck();
 });
