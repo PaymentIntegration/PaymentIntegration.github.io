@@ -26,6 +26,7 @@ function expDateCheck() {
   // }
   
   $(document).ready(function(){
+    registerEventListeners();
     $('#trnCardCvd').focus(function() {
       expDateCheck();
     })
