@@ -26,6 +26,7 @@ function expDateCheck() {
 // }
 
 $(document).ready(function(){
+  alert('jquery loaded')
   $('#trnCardCvd').focus(function() {
     var currentYear = (new Date).getFullYear();
     var expYear = $("#trnExpYear").val();
