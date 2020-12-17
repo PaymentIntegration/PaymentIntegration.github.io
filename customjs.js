@@ -49,7 +49,15 @@ function expDateCheck() {
 
 function registerEventListeners() {
 const cardCvd = document.getElementById('frmPayment').trnCardCvd
+const trnExpMonth = document.getElementById('frmPayment').trnExpMonth
+const trnExpYear = document.getElementById('frmPayment').trnExpYear
 cardCvd.addEventListener('focus', function() {
+    expDateCheck();
+});
+  trnExpMonth.addEventListener('blur', function() {
+    expDateCheck();
+});
+  trnExpYear.addEventListener('blur', function() {
     expDateCheck();
 });
 }
