@@ -27,10 +27,38 @@ function expDateCheck() {
 
 $(document).ready(function(){
   $('#trnCardCvd').focus(function() {
-    expDateCheck();
+    var currentYear = (new Date).getFullYear();
+    var expYear = $("#trnExpYear").val();
+    if (expYear === currentYear.toString().substr(2)) {
+       var currentMonth = (new Date).getMonth() + 1;
+       var expMonth = $("#trnExpMonth").val();
+       if (expMonth < currentMonth.toString()) {
+         $("#trnExpMonth").css('border-color', 'red')
+         $("#trnExpYear").css('border-color', 'red')
+         $("#submitButton").attr('disabled', true);
+       } else {
+        $("#trnExpMonth").css('border-color', 'black')
+        $("#trnExpYear").css('border-color', 'black')
+        $("#submitButton").attr('disabled', false);
+       }
+    }
   })
   $('#trnExpMonth #trnExpYear').blur(function() {
-    expDateCheck();
+    var currentYear = (new Date).getFullYear();
+    var expYear = $("#trnExpYear").val();
+    if (expYear === currentYear.toString().substr(2)) {
+       var currentMonth = (new Date).getMonth() + 1;
+       var expMonth = $("#trnExpMonth").val();
+       if (expMonth < currentMonth.toString()) {
+         $("#trnExpMonth").css('border-color', 'red')
+         $("#trnExpYear").css('border-color', 'red')
+         $("#submitButton").attr('disabled', true);
+       } else {
+        $("#trnExpMonth").css('border-color', 'black')
+        $("#trnExpYear").css('border-color', 'black')
+        $("#submitButton").attr('disabled', false);
+       }
+    }
   });
   $('#ordName').blur(function() {
     
