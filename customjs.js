@@ -1,3 +1,8 @@
+alert("hello")
+function alertMe() {
+  alert("kl")
+}
+
 function expDateCheck() {
   var currentYear = (new Date).getFullYear();
     var expYear = $("#trnExpYear").val();
@@ -7,9 +12,11 @@ function expDateCheck() {
        if (expMonth < currentMonth.toString()) {
          $("#trnExpMonth").css('border-color', 'red')
          $("#trnExpYear").css('border-color', 'red')
+         $("#submitButton").attr('disabled', true);
        } else {
         $("#trnExpMonth").css('border-color', 'black')
         $("#trnExpYear").css('border-color', 'black')
+        $("#submitButton").attr('disabled', false);
        }
     }
 }
