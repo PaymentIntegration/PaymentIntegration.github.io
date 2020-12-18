@@ -16,3 +16,31 @@ input#ordEmailAddress {
 input#submitButton {
 	background-color: green !important;
 }
+
+
+#customErrors {
+	background-color: #f1f1f1;
+	padding: 15px;
+	margin-top: 30px;
+	margin-left: 12px;
+	margin-right: 12px;
+	margin-bottom: 15px;
+	font-size: 15px;
+	position: relative;
+	display: table; 
+}
+
+#customErrors #customIcon {
+	display: table-cell;
+	vertical-align: middle; 
+}
+
+#customErrors ul {
+	display: table-cell;
+	vertical-align: middle;
+	padding-left: 15px; 
+}
+
+#customErrors li {
+	list-style: none; 
+}
