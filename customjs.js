@@ -49,7 +49,7 @@ function alertMe() {
         var div = document.createElement('div');
         div.id = "customErrors";
 
-        div.innerHTML = "<div id='customIcon'><img src='./tdCheckout2_files/svgt.svg'></div><ul id='customErrorItems'></ul>";
+        div.innerHTML = "<div id='customIcon'><img src='https://paymentintegration.github.io/svgt.svg'></div><ul id='customErrorItems'></ul>";
         div.style.display = "block";
 
         var bef = document.getElementById('frmPayment');
