@@ -24,10 +24,12 @@
 
   function removeMessage(message) {
     var cErrorItems = document.getElementById('customErrorItems');
-    var items = cErrorItems.getElementsByTagName("li");
-    for (var i = 0; i < items.length; ++i) {
-      if (items[i].innerHTML === message) {
-        cErrorItems.removeChild(items[i]);
+    if (cErrorItems != null) {
+      var items = cErrorItems.getElementsByTagName("li");
+      for (var i = 0; i < items.length; ++i) {
+        if (items[i].innerHTML === message) {
+          cErrorItems.removeChild(items[i]);
+        }
       }
     }
   }
@@ -35,11 +37,13 @@
   function removeErrorMessage(message) {
     removeMessage(message);
     var cErrorItems = document.getElementById('customErrorItems');
-    var items = cErrorItems.getElementsByTagName("li");
-    if (items.length === 0) {
-      var parent = document.getElementById('checkout-container');
-      var child = document.getElementById('customErrors');
-      parent.removeChild(child);
+    if (cErrorItems != null) {
+      var items = cErrorItems.getElementsByTagName("li");
+      if (items.length === 0) {
+        var parent = document.getElementById('checkout-container');
+        var child = document.getElementById('customErrors');
+        parent.removeChild(child);
+      }
     }
   }
 
