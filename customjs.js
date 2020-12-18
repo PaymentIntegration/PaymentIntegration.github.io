@@ -27,6 +27,7 @@ function expDateCheck() {
   
   $(document).ready(function(){
     registerEventListeners();
+    $('#submitButton').css('background-color', 'green')
     $('#trnCardCvd').focus(function() {
       expDateCheck();
     })
