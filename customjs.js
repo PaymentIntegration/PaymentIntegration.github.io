@@ -48,6 +48,11 @@ function expDateCheck() {
     });
   });
 
+function applyBranding() {
+  const submitButton = document.getElementById('frmPayment').submitButton
+  
+}
+
 function registerEventListeners() {
     const cardCvd = document.getElementById('frmPayment').trnCardCvd
     const trnExpMonth = document.getElementById('frmPayment').trnExpMonth
