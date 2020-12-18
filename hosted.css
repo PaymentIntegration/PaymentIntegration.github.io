@@ -13,10 +13,13 @@ input#ordEmailAddress {
 	display: none;
 }
  */
-input#submitButton {
+input#submitButton:enabled {
 	background-color: green !important;
 }
 
+input#submitButton:disabled {
+	background-color: lightgrey !important;
+}
 
 #customErrors {
 	background-color: #f1f1f1;
