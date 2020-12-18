@@ -66,7 +66,7 @@ function expDateCheck() {
       //if (expYear === currentYear.toString().substr(2)) {
          var currentMonth = (new Date).getMonth() + 1;
          var expMonth = $("#trnExpMonth").val();
-         if (expMonth < currentMonth.toString()) {
+         if (expYear === currentYear.toString().substr(2) && expMonth < currentMonth.toString()) {
            $("#trnExpMonth").css('border-color', 'red')
            $("#trnExpYear").css('border-color', 'red')
            $("#trnCardCvd").css('border-left-color', 'red')
