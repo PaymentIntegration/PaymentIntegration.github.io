@@ -69,11 +69,13 @@ function expDateCheck() {
          if (expMonth < currentMonth.toString()) {
            $("#trnExpMonth").css('border-color', 'red')
            $("#trnExpYear").css('border-color', 'red')
+           $("#trnCardCvd").css('border-left-color', 'red')
            $("#submitButton").attr('disabled', true);
            createErrorMessage("Card expiry is in the past");
          } else {
           $("#trnExpMonth").css('border-color', 'black')
           $("#trnExpYear").css('border-color', 'black')
+           $("#trnCardCvd").css('border-left-color', 'black')
           $("#submitButton").attr('disabled', false);
           removeErrorMessage("Card expiry is in the past");
          }
