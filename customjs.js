@@ -27,7 +27,6 @@ function expDateCheck() {
   
   $(document).ready(function(){
     registerEventListeners();
-    $('#submitButton').css('background-color', 'green')
     $('#trnCardCvd').focus(function() {
       expDateCheck();
     })
@@ -47,11 +46,6 @@ function expDateCheck() {
       
     });
   });
-
-function applyBranding() {
-  const submitButton = document.getElementById('frmPayment').submitButton
-  
-}
 
 function registerEventListeners() {
     const cardCvd = document.getElementById('frmPayment').trnCardCvd
