@@ -9,6 +9,10 @@ input#ordEmailAddress {
 	background-color: whitesmoke !important;
 }
 
-img#powered-by-img {
+/* img#powered-by-img {
 	display: none;
+}
+ */
+input#submitButton {
+	background-color: green !important;
 }
