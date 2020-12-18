@@ -73,9 +73,9 @@ function expDateCheck() {
            $("#submitButton").attr('disabled', true);
            createErrorMessage("Card expiry is in the past");
          } else {
-          $("#trnExpMonth").css('border-color', 'black')
-          $("#trnExpYear").css('border-color', 'black')
-           $("#trnCardCvd").css('border-left-color', 'black')
+          $("#trnExpMonth").css('border-color', 'rgba(200,200,200,1)')
+          $("#trnExpYear").css('border-color', 'rgba(200,200,200,1)')
+           $("#trnCardCvd").css('border-left-color', 'rgba(200,200,200,1)')
           $("#submitButton").attr('disabled', false);
           removeErrorMessage("Card expiry is in the past");
          }
