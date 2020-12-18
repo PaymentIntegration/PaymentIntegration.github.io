@@ -3,6 +3,63 @@ function alertMe() {
   alert("kl")
 }
 
+  function isAlreadyAdded(ulElment, content) {
+    var items = ulElment.getElementsByTagName("li");
+    for (var i = 0; i < items.length; ++i) {
+      if (items[i].innerHTML === content) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  function addMessage(message) {
+    var cErrorItems = document.getElementById('customErrorItems');
+      if (!isAlreadyAdded(cErrorItems, message)) {
+        var li = document.createElement('li');
+        li.appendChild(document.createTextNode(message));
+        cErrorItems.appendChild(li);
+      }
+  }
+
+  function removeMessage(message) {
+    var cErrorItems = document.getElementById('customErrorItems');
+    var items = cErrorItems.getElementsByTagName("li");
+    for (var i = 0; i < items.length; ++i) {
+      if (items[i].innerHTML === message) {
+        cErrorItems.removeChild(items[i]);
+      }
+    }
+  }
+
+  function removeErrorMessage(message) {
+    removeMessage(message);
+    var cErrorItems = document.getElementById('customErrorItems');
+    var items = cErrorItems.getElementsByTagName("li");
+    if (items.length === 0) {
+      var parent = document.getElementById('checkout-container');
+      var child = document.getElementById('customErrors');
+      parent.removeChild(child);
+    }
+  }
+
+  function createErrorMessage(message) {
+    var cerrors = document.getElementById('customErrors');
+    if (cerrors === null) {
+        var div = document.createElement('div');
+        div.id = "customErrors";
+
+        div.innerHTML = "<div id='customIcon'><img src='./tdCheckout2_files/svgt.svg'></div><ul id='customErrorItems'></ul>";
+        div.style.display = "block";
+
+        var bef = document.getElementById('frmPayment');
+        bef.parentNode.insertBefore(div, bef);
+        addMessage(message);
+    } else {
+        addMessage(message);
+    }
+  }
+
 function expDateCheck() {
     var currentYear = (new Date).getFullYear();
       var expYear = $("#trnExpYear").val();
@@ -13,10 +70,12 @@ function expDateCheck() {
            $("#trnExpMonth").css('border-color', 'red')
            $("#trnExpYear").css('border-color', 'red')
            $("#submitButton").attr('disabled', true);
+           createErrorMessage("Card expiry is in the past");
          } else {
           $("#trnExpMonth").css('border-color', 'black')
           $("#trnExpYear").css('border-color', 'black')
           $("#submitButton").attr('disabled', false);
+          removeErrorMessage("Card expiry is in the past");
          }
       //}
   }
