@@ -1,7 +1,7 @@
-alert("hello")
-function alertMe() {
-  alert("kl")
-}
+// alert("hello")
+// function alertMe() {
+//   alert("kl")
+// }
 
 function expDateCheck() {
     var currentYear = (new Date).getFullYear();
