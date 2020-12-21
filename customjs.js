@@ -92,6 +92,7 @@ function expDateCheck() {
   
   $(document).ready(function(){
     registerEventListeners();
+    initPage();
     $('#trnCardCvd').focus(function() {
       expDateCheck();
     })
@@ -112,12 +113,34 @@ function expDateCheck() {
     });
   });
 
+function initPage() {
+  const name = document.getElementById('frmPayment').ordName
+  name.placeholder = name.placeholder + "*"
+  const addr1 = document.getElementById('frmPayment').ordAddress1
+  addr1.placeholder = addr1.placeholder + "*"
+  const city = document.getElementById('frmPayment').ordCity
+  city.placeholder = city.placeholder + "*"
+  const postalCode document.getElementById('frmPayment').ordPostalCode
+  postalCode.placeholder = postalCode.placeholder + "*"
+  $("#submitButton").attr('disabled', true);
+}
+
+mandatoryFieldCheck() {
+  var name = $("#ordName").val();
+  if (!name.length > 0) {
+    $("#ordName").css('border-color', 'red')
+  }
+} 
+
 function registerEventListeners() {
     const cardCvd = document.getElementById('frmPayment').trnCardCvd
     const trnExpMonth = document.getElementById('frmPayment').trnExpMonth
     const trnExpYear = document.getElementById('frmPayment').trnExpYear
     cardCvd.addEventListener('focus', function() {
         expDateCheck();
+    });
+    cardCvd.addEventListener('blur', function() {
+        mandatoryFieldCheck();
     });
       trnExpMonth.addEventListener('blur', function() {
         expDateCheck();
