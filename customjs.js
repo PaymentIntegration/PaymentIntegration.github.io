@@ -120,7 +120,7 @@ function initPage() {
   addr1.placeholder = addr1.placeholder + "*"
   const city = document.getElementById('frmPayment').ordCity
   city.placeholder = city.placeholder + "*"
-  const postalCode document.getElementById('frmPayment').ordPostalCode
+  const postalCode = document.getElementById('frmPayment').ordPostalCode
   postalCode.placeholder = postalCode.placeholder + "*"
   $("#submitButton").attr('disabled', true);
 }
