@@ -3,6 +3,20 @@
 //   alert("kl")
 // }
 
+const fieldErrorMap = [['#ordName', 'Name']
+                  ,['#ordAddress1', 'Address1']
+                  ,['#ordCity', 'City']
+                  ,['#ordPostalCode', 'Postal code'] ];
+
+function getFieldName(fieldId) {
+  fieldErrorMap.forEach(data) => {
+    if (fieldId === data[0]) {
+      return data[1]
+    }
+  }
+  return "";
+}
+
 function isAlreadyAdded(ulElment, content) {
   var items = ulElment.getElementsByTagName("li");
   for (var i = 0; i < items.length; ++i) {
@@ -134,10 +148,10 @@ function setFieldAttributes(fieldName) {
   var name = $(fieldName).val();
   if (!name.length > 0) {
     $(fieldName).css('border-color', 'red');
-    createErrorMessage(fieldName + " is required. Please enter valid value to proceed.");
+    createErrorMessage(getFieldName(fieldName) + " is required. Please enter valid value to proceed.");
   } else {
     $(fieldName).css('border-color', 'rgba(200,200,200,1)');
-    removeErrorMessage(fieldName + " is required. Please enter valid value to proceed.");
+    removeErrorMessage(getFieldName(fieldName) + " is required. Please enter valid value to proceed.");
   }
 }
 
