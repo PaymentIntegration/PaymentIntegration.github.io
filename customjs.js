@@ -125,7 +125,7 @@ function initPage() {
   $("#submitButton").attr('disabled', true);
 }
 
-mandatoryFieldCheck() {
+function mandatoryFieldCheck() {
   var name = $("#ordName").val();
   if (!name.length > 0) {
     $("#ordName").css('border-color', 'red')
