@@ -155,11 +155,27 @@ function registerEventListeners() {
   const cardCvd = document.getElementById('frmPayment').trnCardCvd
   const trnExpMonth = document.getElementById('frmPayment').trnExpMonth
   const trnExpYear = document.getElementById('frmPayment').trnExpYear
+  const name = document.getElementById('frmPayment').ordName
+  const addr1 = document.getElementById('frmPayment').ordAddress1
+  const city = document.getElementById('frmPayment').ordCity
+  const postal = document.getElementById('frmPayment').ordPostalCode
   cardCvd.addEventListener('focus', function() {
       expDateCheck();
   });
   cardCvd.addEventListener('blur', function() {
       mandatoryFieldCheck();
+  });
+  name.addEventListener('blur', function() {
+    mandatoryFieldCheck();
+  });
+  addr1.addEventListener('blur', function() {
+    mandatoryFieldCheck();
+  });
+  city.addEventListener('blur', function() {
+    mandatoryFieldCheck();
+  });
+  postal.addEventListener('blur', function() {
+    mandatoryFieldCheck();
   });
     trnExpMonth.addEventListener('blur', function() {
       expDateCheck();
