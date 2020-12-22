@@ -4,9 +4,9 @@
 // }
 
 const fieldErrorMap = [['#ordName', 'Name']
-                  ,['#ordAddress1', 'Address1']
+                  ,['#ordAddress1', 'Address Line1']
                   ,['#ordCity', 'City']
-                  ,['#ordPostalCode', 'Postal code'] ];
+                  ,['#ordPostalCode', 'Postal/Zip code'] ];
 
 function getFieldName(fieldId) {
   var returnValue = "";
