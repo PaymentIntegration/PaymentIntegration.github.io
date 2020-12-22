@@ -18,6 +18,47 @@ function getFieldName(fieldId) {
   return returnValue;
 }
 
+function setAdjacentStyle(fieldId, color) {
+  if (fieldId === "#ordName") {
+    $("#ordEmailAddress").css("border-top-color", color);
+    $("#ordPhoneNumber").css("border-top-color", color);
+  } else {
+    var addr1 = $("#ordAddress1").val();
+    var city = $("#ordCity").val();
+    if (addr1.length === 0 && city.length === 0) {
+      $("#ordAddress2").css("border-left-color", 'red');
+      $("#ordCity").css("border-top-color", 'red');
+      $("#ordProvince").css("border-top-color", 'red');
+    } else if (addr1.length > 0 && city.length > 0) {
+      $("#ordAddress2").css("border-left-color", 'rgba(200,200,200,1)');
+      $("#ordCity").css("border-top-color", 'rgba(200,200,200,1)');
+      $("#ordProvince").css("border-top-color", 'rgba(200,200,200,1)');
+    } else if (addr1.length > 0 && city.length === 0) {
+      $("#ordAddress2").css("border-left-color", 'rgba(200,200,200,1)');
+      $("#ordCity").css("border-top-color", 'red');
+      $("#ordProvince").css("border-top-color", 'red');
+    } else if (addr1.length === 0 && city.length > 0) {
+      $("#ordAddress2").css("border-left-color", 'red');
+      $("#ordCity").css("border-top-color", 'red');
+      $("#ordProvince").css("border-top-color", 'rgba(200,200,200,1)');
+    }
+    var postalCode = $("#ordPostalCode").val();
+    if (postalCode.length === 0 && city.length === 0) {
+      $("#ordPostalCode").css("border-left-color", 'red');
+      $("#ordCountry").css("border-top-color", 'red');
+    } else if (postalCode.length > 0 && city.length > 0) {
+      $("#ordPostalCode").css("border-left-color", 'rgba(200,200,200,1)');
+      $("#ordCountry").css("border-top-color", 'rgba(200,200,200,1)');
+    } else if (postalCode.length > 0 && city.length === 0) {
+      $("#ordPostalCode").css("border-left-color", 'red');
+      $("#ordCountry").css("border-top-color", 'rgba(200,200,200,1)');
+    } else if (postalCode.length === 0 && city.length > 0) {
+      //$("#ordPostalCode").css("border-left-color", 'red');
+      $("#ordCountry").css("border-top-color", 'red');
+    }
+  }
+}
+
 function isAlreadyAdded(ulElment, content) {
   var items = ulElment.getElementsByTagName("li");
   for (var i = 0; i < items.length; ++i) {
@@ -149,9 +190,11 @@ function setFieldAttributes(fieldName) {
   var name = $(fieldName).val();
   if (!name.length > 0) {
     $(fieldName).css('border-color', 'red');
+    setAdjacentStyle(fieldName, 'red'); 
     createErrorMessage(getFieldName(fieldName) + " is required. Please enter valid value to proceed.");
   } else {
     $(fieldName).css('border-color', 'rgba(200,200,200,1)');
+    setAdjacentStyle(fieldName, 'rgba(200,200,200,1)'); 
     removeErrorMessage(getFieldName(fieldName) + " is required. Please enter valid value to proceed.");
   }
 }
