@@ -10,11 +10,8 @@ const fieldErrorMap = [['#ordName', 'Name']
 
 function getFieldName(fieldId) {
   var returnValue = "";
-  console.log('fieldId - ' + fieldId)
   fieldErrorMap.forEach((data) => {
-    console.log('data[0] - ' + data[0])
     if (fieldId === data[0]) {
-      console.log('data[1] - ' + data[1])
       returnValue = data[1];
     }
   });
