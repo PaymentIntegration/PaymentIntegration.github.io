@@ -87,10 +87,6 @@ function expDateCheck() {
        setSubmitButton();
 }
 
-// function validatePhoneNumber(phoneNumber, country) {
-//  return phoneUtil.isValidNumberForRegion(phoneUtil.parse(phoneNumber, country), country);
-// }
-
 $(document).ready(function(){
   registerEventListeners();
   initPage();
@@ -127,14 +123,6 @@ $("#submitButton").attr('disabled', true);
 }
 
 function mandatoryFieldCheck() {
-  // var name = $("#ordName").val();
-  // if (!name.length > 0) {
-  //   $("#ordName").css('border-color', 'red');
-  //   $("#submitButton").attr('disabled', true);
-  // } else {
-  //   $("#ordName").css('border-color', 'rgba(200,200,200,1)');
-  //   $("#submitButton").attr('disabled', false);
-  // }
   setFieldAttributes("#ordName");
   setFieldAttributes("#ordAddress1");
   setFieldAttributes("#ordCity");
@@ -146,8 +134,10 @@ function setFieldAttributes(fieldName) {
   var name = $(fieldName).val();
   if (!name.length > 0) {
     $(fieldName).css('border-color', 'red');
+    createErrorMessage(fieldName + " is required. Please enter valid value to proceed.");
   } else {
     $(fieldName).css('border-color', 'rgba(200,200,200,1)');
+    removeErrorMessage(fieldName + " is required. Please enter valid value to proceed.");
   }
 }
 
