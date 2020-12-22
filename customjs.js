@@ -9,11 +9,11 @@ const fieldErrorMap = [['#ordName', 'Name']
                   ,['#ordPostalCode', 'Postal code'] ];
 
 function getFieldName(fieldId) {
-  fieldErrorMap.forEach(data) => {
+  fieldErrorMap.forEach((data) => {
     if (fieldId === data[0]) {
       return data[1]
     }
-  }
+  });
   return "";
 }
 
