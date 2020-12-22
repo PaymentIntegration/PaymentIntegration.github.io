@@ -64,26 +64,27 @@ function createErrorMessage(message) {
   }
 }
 
-function expDateCheck() {
+function isInvalidExpDate() {
   var currentYear = (new Date).getFullYear();
-    var expYear = $("#trnExpYear").val();
-    //if (expYear === currentYear.toString().substr(2)) {
-       var currentMonth = (new Date).getMonth() + 1;
-       var expMonth = $("#trnExpMonth").val();
-       if (expYear === currentYear.toString().substr(2) && expMonth < currentMonth.toString()) {
+  var expYear = $("#trnExpYear").val();
+  var currentMonth = (new Date).getMonth() + 1;
+  var expMonth = $("#trnExpMonth").val();
+  return expYear === currentYear.toString().substr(2) && expMonth < currentMonth.toString()
+}
+
+function expDateCheck() {
+       if (isInvalidExpDate()) {
          $("#trnExpMonth").css('border-color', 'red')
          $("#trnExpYear").css('border-color', 'red')
          $("#trnCardCvd").css('border-left-color', 'red')
-         $("#submitButton").attr('disabled', true);
          createErrorMessage("Card expiry is in the past");
        } else {
         $("#trnExpMonth").css('border-color', 'rgba(200,200,200,1)')
         $("#trnExpYear").css('border-color', 'rgba(200,200,200,1)')
          $("#trnCardCvd").css('border-left-color', 'rgba(200,200,200,1)')
-        $("#submitButton").attr('disabled', false);
         removeErrorMessage("Card expiry is in the past");
        }
-    //}
+       setSubmitButton();
 }
 
 // function validatePhoneNumber(phoneNumber, country) {
@@ -138,16 +139,27 @@ function mandatoryFieldCheck() {
   setFieldAttributes("#ordAddress1");
   setFieldAttributes("#ordCity");
   setFieldAttributes("#ordPostalCode");
+  setSubmitButton();
 }
 
 function setFieldAttributes(fieldName) {
   var name = $(fieldName).val();
   if (!name.length > 0) {
     $(fieldName).css('border-color', 'red');
-    $("#submitButton").attr('disabled', true);
   } else {
     $(fieldName).css('border-color', 'rgba(200,200,200,1)');
+  }
+}
+
+function setSubmitButton() {
+  var name = $("#ordName").val();
+  var addr1 = $("#ordAddress1").val();
+  var city = $("#ordCity").val();
+  var postalCode = $("#ordPostalCode").val();
+  if (name.length > 0 && addr1.length > 0 && city.length > 0 && postalCode.length > 0 && !isInvalidExpDate() ) {
     $("#submitButton").attr('disabled', false);
+  } else {
+    $("#submitButton").attr('disabled', true);
   }
 }
 
