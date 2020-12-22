@@ -135,6 +135,9 @@ function mandatoryFieldCheck() {
   //   $("#submitButton").attr('disabled', false);
   // }
   setFieldAttributes("#ordName");
+  setFieldAttributes("#ordAddress1");
+  setFieldAttributes("#ordCity");
+  setFieldAttributes("#ordPostalCode");
 }
 
 function setFieldAttributes(fieldName) {
