@@ -1,9 +1,9 @@
 var langCode;
 function alertMe() {
-  initPage();
   var url = window.location.href;
   var lang = url.split('&trnLanguage=')[1].substr(0, 3);
   langCode = lang;
+  initPage();
 }
 
 const fieldErrorMap = [['#ordName', 'Name', 'Nom']
