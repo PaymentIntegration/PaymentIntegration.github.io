@@ -17,7 +17,7 @@ function getFieldName(fieldId) {
   var returnValue = "";
   fieldErrorMap + "Eng".forEach((data) => {
     if (fieldId === data[0]) {
-      returnValue = data[1];
+      returnValue = langCode === 'eng' ? data[1] : data[2];
     }
   });
   return returnValue;
