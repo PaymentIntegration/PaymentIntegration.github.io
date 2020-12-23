@@ -179,6 +179,7 @@ city.placeholder = city.placeholder + "*"
 const postalCode = document.getElementById('frmPayment').ordPostalCode
 postalCode.placeholder = postalCode.placeholder + "*"
 $("#submitButton").attr('disabled', true);
+  document.getElementsByTagName("html")[0].setAttribute("lang", langCode);
   const img = document.getElementById('dt-img')
   const headerDiv = document.getElementById('headerBar');
   img.src = 'https://drivetest.ca/img/site/svg/Drivetest-Logo.svg'
