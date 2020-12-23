@@ -8,14 +8,14 @@ function alertMe() {
   alert( $("#dt-img").src)
 }
 
-const fieldErrorMap = [['#ordName', 'Name']
-                  ,['#ordAddress1', 'Address Line1']
-                  ,['#ordCity', 'City']
-                  ,['#ordPostalCode', 'Postal/Zip code'] ];
+const fieldErrorMap = [['#ordName', 'Name', 'Nom']
+                  ,['#ordAddress1', 'Address Line1', 'Adresse – ligne 1']
+                  ,['#ordCity', 'City', 'Ville']
+                  ,['#ordPostalCode', 'Postal/Zip code', 'Code postal/zip'] ];
 
 function getFieldName(fieldId) {
   var returnValue = "";
-  fieldErrorMap.forEach((data) => {
+  fieldErrorMap + "Eng".forEach((data) => {
     if (fieldId === data[0]) {
       returnValue = data[1];
     }
