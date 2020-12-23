@@ -15,7 +15,7 @@ const fieldErrorMap = [['#ordName', 'Name', 'Nom']
 
 function getFieldName(fieldId) {
   var returnValue = "";
-  fieldErrorMap + "Eng".forEach((data) => {
+  fieldErrorMap.forEach((data) => {
     if (fieldId === data[0]) {
       returnValue = langCode === 'eng' ? data[1] : data[2];
     }
