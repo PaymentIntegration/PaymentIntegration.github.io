@@ -224,6 +224,7 @@ function registerEventListeners() {
   const addr1 = document.getElementById('frmPayment').ordAddress1
   const city = document.getElementById('frmPayment').ordCity
   const postal = document.getElementById('frmPayment').ordPostalCode
+  alert(langCode);
   cardCvd.addEventListener('focus', function() {
       expDateCheck();
   });
