@@ -4,8 +4,6 @@ function alertMe() {
   var url = window.location.href;
   var lang = url.split('&trnLanguage=')[1].substr(0, 3);
   langCode = lang;
-  alert(langCode);
-  alert( $("#dt-img").src)
 }
 
 const fieldErrorMap = [['#ordName', 'Name', 'Nom']
