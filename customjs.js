@@ -182,9 +182,12 @@ const postalCode = document.getElementById('frmPayment').ordPostalCode
 postalCode.placeholder = postalCode.placeholder + "*"
 $("#submitButton").attr('disabled', true);
   const img = document.getElementById('dt-img')
+  const headerDiv = document.getElementById('headerBar');
   img.src = 'https://drivetest.ca/img/site/svg/Drivetest-Logo.svg'
+  headerDiv.innerHTML = "Book a Road Test // Payment";
   if (langCode === 'fre') {
       img.src = 'https://drivetest.ca/img/site/svg/Drivetest-Logo-fr.svg'
+     headerDiv.innerHTML = "Effectuer une réservation pour un examen pratique // Paiement";
   }
 }
 
