@@ -1,7 +1,7 @@
-// alert("hello")
-// function alertMe() {
-//   alert("kl")
-// }
+alert(window.location.href)
+function alertMe() {
+  alert("kl")
+}
 
 const fieldErrorMap = [['#ordName', 'Name']
                   ,['#ordAddress1', 'Address Line1']
