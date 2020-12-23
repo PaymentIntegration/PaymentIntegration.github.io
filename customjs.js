@@ -181,6 +181,11 @@ city.placeholder = city.placeholder + "*"
 const postalCode = document.getElementById('frmPayment').ordPostalCode
 postalCode.placeholder = postalCode.placeholder + "*"
 $("#submitButton").attr('disabled', true);
+  const img = document.getElementById('dt-img')
+  img.src = 'https://drivetest.ca/img/site/svg/Drivetest-Logo.svg'
+  if (langCode === 'fre') {
+      img.src = 'https://drivetest.ca/img/site/svg/Drivetest-Logo-fr.svg'
+  }
 }
 
 function mandatoryFieldCheck() {
@@ -224,11 +229,6 @@ function registerEventListeners() {
   const addr1 = document.getElementById('frmPayment').ordAddress1
   const city = document.getElementById('frmPayment').ordCity
   const postal = document.getElementById('frmPayment').ordPostalCode
-  const img = document.getElementById('dt-img')
-  img.src = 'https://drivetest.ca/img/site/svg/Drivetest-Logo.svg'
-  if (langCode === 'fre') {
-      img.src = 'https://drivetest.ca/img/site/svg/Drivetest-Logo-fr.svg'
-  }
   cardCvd.addEventListener('focus', function() {
       expDateCheck();
   });
