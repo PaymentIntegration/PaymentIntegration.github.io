@@ -181,7 +181,7 @@ postalCode.placeholder = postalCode.placeholder + "*"
 $("#submitButton").attr('disabled', true);
 $("#trnOrderNumber").attr('disabled', true);
   const ordNumber = document.getElementById('frmPayment').trnOrderNumber
-  ordNumber.disabled = true;
+  ordNumber.setAttribute("disabled", true);
   document.getElementsByTagName("html")[0].setAttribute("lang", langCode.substr(0, 2));
   const img = document.getElementById('dt-img')
   const headerDiv = document.getElementById('headerBar');
