@@ -181,6 +181,8 @@ postalCode.placeholder = postalCode.placeholder + "*"
 $("#submitButton").attr('disabled', true);
   const ordNumber = document.getElementById('frmPayment').trnOrderNumber
   ordNumber.setAttribute("tabindex", -1);
+  const emailAddress = document.getElementById('frmPayment').ordEmailAddress
+  emailAddress.setAttribute("tabindex", -1);
   document.getElementsByTagName("html")[0].setAttribute("lang", langCode.substr(0, 2));
   const img = document.getElementById('dt-img')
   const headerDiv = document.getElementById('headerBar');
