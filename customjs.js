@@ -189,7 +189,7 @@ $("#submitButton").attr('disabled', true);
   img.src = 'https://drivetest.ca/img/site/svg/Drivetest-Logo.svg'
   headerDiv.innerHTML = "Book a Road Test // Payment";
   if (langCode === 'fre') {
-      img.src = 'https://paymentintegration.github.io/Drivetest-Logo-fr.svg'
+      img.src = 'https://paymentintegration.github.io/Drivetest-Logo-FR.svg'
      headerDiv.innerHTML = "Effectuer une réservation pour un examen pratique // Paiement";
   }
 }
