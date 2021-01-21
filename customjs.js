@@ -13,11 +13,11 @@ const fieldErrorMap = [['#ordName', 'Name', 'Nom']
 
 function getFieldName(fieldId) {
   var returnValue = "";
-  fieldErrorMap.forEach((data) => {
-    if (fieldId === data[0]) {
-      returnValue = langCode === 'eng' ? data[1] : data[2];
+  for (let i = 0;i < fieldErrorMap.length;i++) {
+    if (fieldId === fieldErrorMap[i][0]) {
+      returnValue = langCode === 'eng' ? fieldErrorMap[i][1] : fieldErrorMap[i][2];
     }
-  });
+  };
   return returnValue;
 }
 
